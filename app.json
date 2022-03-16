@@ -2,6 +2,7 @@
   "pages": [
     "pages/mentorList/mentorList",
     "pages/mentorDetail/mentorDetail",
+    "pages/profile/profile",
     "pages/test1/test1",
     "pages/test/test",
     "pages/index/index",
@@ -12,6 +13,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor":"#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/tabBarIcon/home.png",
+        "selectedIconPath": "icon/tabBarIcon/home_selected.png"
+      },
+      {
+        "pagePath": "pages/mentorList/mentorList",
+        "text": "导师阵容",
+        "iconPath": "icon/tabBarIcon/hands.png",
+        "selectedIconPath": "icon/tabBarIcon/hands_selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "没觉睡的我",
+        "iconPath": "icon/tabBarIcon/baby.png",
+        "selectedIconPath": "icon/tabBarIcon/baby_selected.png"
+      } 
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
