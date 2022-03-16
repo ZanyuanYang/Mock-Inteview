@@ -1,0 +1,10 @@
+<view>
+  <view wx:for="{{mentor_list}}" wx:for-item="item">
+    <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
+      <view>{{item._id}}</view>
+      <view>{{item.name}}</view>
+      <view>{{item.position}}</view>
+      <view>{{item.experience}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/mentorDetail/mentorDetail.wxml-->
+<view>{{mentorObj._id}}</view>
+<view>{{mentorObj.name}}</view>
+<view>{{mentorObj.position}}</view>
+<view>{{mentorObj.experience}}</view>

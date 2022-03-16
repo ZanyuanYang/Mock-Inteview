@@ -1,0 +1,23 @@
+<view class="BD">
+
+  <form bindsubmit="bthsub">
+    <view class="title">name</view>
+    <view class="nr">
+      <input name="name" placeholder="enter name" />
+    </view>
+
+    <view class="title">position</view>
+    <view class="nr">
+      <input name="position" placeholder="enter position" />
+    </view>
+
+    <view class="title">experience</view>
+    <view class="nr">
+      <input name="experience" placeholder="enter experience" />
+    </view>
+
+    <view class="btn">
+      <button type='primary' form-type="submit">register</button>
+    </view>
+  </form>
+</view>

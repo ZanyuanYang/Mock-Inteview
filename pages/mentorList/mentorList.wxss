@@ -1,0 +1,4 @@
+/* pages/mentorList/mentorList.wxss */
+.mentor_item{
+  margin-top: 30px;
+}
