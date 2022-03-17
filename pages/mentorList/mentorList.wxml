@@ -1,10 +1,17 @@
+<view class="search_wrap">
+  <view>
+        <image class="search_icon" src="../../icon/search.png"></image>
+        <text class="search_text">搜索关键词</text>
+    </view>
+</view>
 <view>
   <view wx:for="{{mentor_list}}" wx:for-item="item">
-    <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
-      <view>{{item._id}}</view>
-      <view>{{item.name}}</view>
-      <view>{{item.position}}</view>
-      <view>{{item.experience}}</view>
+    <view>
+      <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
+        <!-- <view>{{item._id}}</view> -->
+        <view class="mentor_title">{{item.name}} | {{item.position}}</view>
+        <view>{{item.experience}}</view>
+      </view>
     </view>
   </view>
 </view>
