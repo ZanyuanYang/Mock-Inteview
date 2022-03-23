@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText":"导师阵容"
+  "navigationBarTitleText":"导师阵容",
+  "navigationStyle": "custom"
 }

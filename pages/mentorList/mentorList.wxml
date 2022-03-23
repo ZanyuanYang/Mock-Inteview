@@ -1,10 +1,18 @@
-<view class="search_wrap">
-  <view>
-        <image class="search_icon" src="../../icon/search.png"></image>
-        <text class="search_text">搜索关键词</text>
+
+<view class="search_background">
+  <view class="title">导师阵容</view>
+  <view class="search_wrap">
+    <view class="search">
+      <image class="search_icon" src="../../icon/search.png"></image>
+      <text class="search_text">搜索关键词</text>
     </view>
+    <view class="filter">
+      <image class="search_icon" src="../../icon/filter.png"></image>
+    </view>
+  </view>
 </view>
-<view>
+
+<view class="mentor_wrapper"> 
   <view wx:for="{{mentor_list}}" wx:for-item="item">
     <view>
       <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
