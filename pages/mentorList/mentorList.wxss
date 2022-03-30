@@ -67,6 +67,7 @@ page {
   top: 22%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
 }
 .mentor_wrapper .mentor_wrapper_1 .mentor_item {
   margin-top: 10px;
@@ -114,7 +115,7 @@ page {
   font-size: 12px;
   padding: 3% 0 3% 0;
 }
-.mentor_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row2 view {
+.mentor_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row2 view view {
   display: flex;
   align-items: center;
   justify-content: center;

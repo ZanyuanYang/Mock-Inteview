@@ -16,7 +16,6 @@
   <view wx:for="{{mentor_list}}" wx:for-item="item">
     <view class="mentor_wrapper_1">
       <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
-
         <view class="mentor_item_row1">
           <image class="avatar" src="../../icon/avatar.JPG" alt="avatar" />
           <view class="mentor_info">
@@ -30,11 +29,15 @@
         </view>
 
         <view class="mentor_item_row2">
-          <view>用户增长</view>
-          <view>三年产品</view>
-          <view>UGC</view>
-          <view>个人成长</view>
+          <view wx:for="{{item.tag}}" wx:for-item="tag_item">
+            <view>{{tag_item}}</view>
+            <!-- <view>用户增长</view>
+            <view>三年产品</view>
+            <view>UGC</view>
+            <view>个人成长</view> -->
+          </view>
         </view>
+        
 
         <view class="mentor_item_row3">
           <view>#职业规划（1年以上开发或测试）</view>
