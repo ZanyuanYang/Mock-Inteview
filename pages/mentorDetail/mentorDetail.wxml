@@ -1,5 +1,18 @@
 <!--pages/mentorDetail/mentorDetail.wxml-->
 <view>{{mentorObj._id}}</view>
-<view>{{mentorObj.name}}</view>
-<view>{{mentorObj.position}}</view>
-<view>{{mentorObj.experience}}</view>
+<view>name: {{mentorObj.name}}</view>
+<view>company: {{mentorObj.company}}</view>
+<view>domain: {{mentorObj.domain}}</view>
+<view>position: {{mentorObj.position}}</view>
+<view>experience :{{mentorObj.experience}}</view>
+<view>preferred_schedule: {{mentorObj.preferred_schedule}}</view>
+<view>reservation_count: {{mentorObj.reservation_count}}</view>
+<view>summary: {{mentorObj.summary}}</view>
+<view>work_years: {{mentorObj.work_years}}</view>
+<view wx:for="{{mentorObj.service}}" wx:for-item="service_item">
+  <view>{{service_item}}</view>
+</view>
+<view wx:for="{{mentorObj.tag}}" wx:for-item="tag_item">
+  <view>{{tag_item}}</view>
+</view>
+<image class="avatar" src="{{mentorObj.avatar}}"></image>
