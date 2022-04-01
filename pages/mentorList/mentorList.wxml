@@ -1,50 +1,52 @@
 
-<view class="search_background">
-  <view class="title">导师阵容</view>
-  <view class="search_wrap">
-    <view class="search">
-      <image class="search_icon" src="../../icon/search.png"></image>
-      <text class="search_text">搜索关键词</text>
-    </view>
-    <view class="filter">
-      <image class="search_icon" src="../../icon/filter.png"></image>
+<view class='cates'>
+  <view class="search_background">
+    <view class="title">导师阵容</view>
+    <view class="search_wrap">
+      <view class="search">
+        <image class="search_icon" src="../../icon/search.png"></image>
+        <text class="search_text">搜索关键词</text>
+      </view>
+      <view class="filter">
+        <image class="search_icon" src="../../icon/filter.png"></image>
+      </view>
     </view>
   </view>
-</view>
 
-<view class="mentor_wrapper"> 
-  <view wx:for="{{mentor_list}}" wx:for-item="item">
-    <view class="mentor_wrapper_1">
-      <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
-        <view class="mentor_item_row1">
-          <image class="avatar" src="../../icon/avatar.JPG" alt="avatar" />
-          <view class="mentor_info">
-            <view class="mentor_name">{{item.name}}</view>
-            <view class="mentor_title">{{item.position}}</view>
+  <view class="mentor_wrapper"> 
+    <view wx:for="{{mentor_list}}" wx:for-item="item">
+      <view class="mentor_wrapper_1">
+        <view id="{{item._id}}" bindtap="mentor_detail" class="mentor_item">
+          <view class="mentor_item_row1">
+            <image class="avatar" src="../../icon/avatar.JPG" alt="avatar" />
+            <view class="mentor_info">
+              <view class="mentor_name">{{item.name}}</view>
+              <view class="mentor_title">{{item.position}}</view>
+            </view>
+            <view class="mentor_appointment_btn">
+              <view class="mentor_appointment">去预约</view>
+              <image class="right_arrow" src="../../icon/right_arrow.png" alt="avatar" />
+            </view>
           </view>
-          <view class="mentor_appointment_btn">
-            <view class="mentor_appointment">去预约</view>
-            <image class="right_arrow" src="../../icon/right_arrow.png" alt="avatar" />
+
+          <view class="mentor_item_row2">
+            <view wx:for="{{item.tag}}" wx:for-item="tag_item">
+              <view>{{tag_item}}</view>
+              <!-- <view>用户增长</view>
+              <view>三年产品</view>
+              <view>UGC</view>
+              <view>个人成长</view> -->
+            </view>
           </view>
-        </view>
+          
 
-        <view class="mentor_item_row2">
-          <view wx:for="{{item.tag}}" wx:for-item="tag_item">
-            <view>{{tag_item}}</view>
-            <!-- <view>用户增长</view>
-            <view>三年产品</view>
-            <view>UGC</view>
-            <view>个人成长</view> -->
+          <view class="mentor_item_row3">
+            <view>#职业规划（1年以上开发或测试）</view>
+            <view>#团队管理（100人以内，产品研发测试</view>
           </view>
-        </view>
-        
 
-        <view class="mentor_item_row3">
-          <view>#职业规划（1年以上开发或测试）</view>
-          <view>#团队管理（100人以内，产品研发测试</view>
+          <!-- <view>{{item.experience}}</view> -->
         </view>
-
-        <!-- <view>{{item.experience}}</view> -->
       </view>
     </view>
   </view>
