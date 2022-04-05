@@ -1,5 +1,102 @@
-<!--pages/mentorDetail/mentorDetail.wxml-->
-<view>{{mentorObj._id}}</view>
+<view class="title_background">
+  <view class="title">导师预约</view>
+</view>
+
+<view class="appointment_wrapper">
+  <view class="mentor_wrapper_1">
+    <view class="mentor_item">
+      <view class="mentor_item_row1">
+        <image class="avatar" src="{{mentorObj.avatar}}" />
+        <view class="mentor_info">
+          <view class="mentor_name">{{mentorObj.name}}</view>
+          <view class="mentor_title">{{mentorObj.position}}</view>
+        </view>
+        <view class="mentor_appointment_btn">
+          <view class="mentor_appointment">去预约</view>
+          <image class="right_arrow" src="../../icon/right_arrow.png" alt="avatar" />
+        </view>
+      </view>
+
+      <view class="mentor_item_row2">
+        <view wx:for="{{mentorObj.tag}}" wx:for-item="tag_item">
+          <view>{{tag_item}}</view>
+        </view>
+      </view>
+
+      <view class="mentor_item_row3 mentor_item_row">
+        <view class="title mentor_summary_title">导师介绍</view>
+        <view class="information mentor_summary">{{mentorObj.summary}}</view>
+      </view>
+
+      <view class="mentor_item_row4 mentor_item_row">
+        <view class="title mentor_appointment_time_title">可预约时间</view>
+        <view class="information mentor_appointment_time">{{mentorObj.preferred_schedule}}</view>
+      </view>
+
+      <view class="mentor_item_row5 mentor_item_row">
+        <view class="title mentor_service_title">可提供指导</view>
+        <view class="information mentor_service">
+          <view wx:for="{{mentorObj.service}}" wx:for-item="service_item">
+            <view>- {{service_item}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="appointment_form_wrapper">
+        <text>预约报名</text>
+        <form>
+          <view class="form_wrapper">
+            <view class="title">姓名</view>
+            <view class="input">
+              <input class="input_text" name="name" placeholder="填写你的用户名" />
+            </view>
+
+            <view class="title">微信号</view>
+            <view class="input">
+              <input class="input_text" name="name" placeholder="填写你的微信号" />
+            </view>
+
+            <view class="title">电话:(选填)</view>
+            <view class="input">
+              <input class="input_text" name="name" placeholder="填写你的电话" />
+            </view>
+
+            <view class="title">预约指导类型</view>
+            <view class="input">
+              <input class="input_text" name="name" placeholder="选择你的指导类型" />
+            </view>
+
+            <view class="title">预约意向时间</view>
+            <view class="input">
+              <input class="input_text" name="name" placeholder="请填写所有意向时间" />
+            </view>
+
+            <view class="title">自我介绍/备注</view>
+            <view class="input_summary">
+              <textarea class="input_text" name="name" placeholder="300字内" />
+            </view>
+          </view>
+        </form>
+      </view>
+
+      <view class="resume_wrapper">
+        <text class="title">上传简历</text>
+      </view>
+
+      <view class="alert_text">
+        <text>预约提交后小戴工作室会尽快联系导师进行匹配。匹配结果会通过电话/微信的形式联络候选人和导师。该预约目前免费。最终解释权归没觉睡工作室所有。</text>
+      </view>
+
+      <view class="submit_wrapper">
+        <button form-type="submit" class="submit_btn">提交</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- <view>{{mentorObj._id}}</view>
 <view>name: {{mentorObj.name}}</view>
 <view>company: {{mentorObj.company}}</view>
 <view>domain: {{mentorObj.domain}}</view>
@@ -15,4 +112,4 @@
 <view wx:for="{{mentorObj.tag}}" wx:for-item="tag_item">
   <view>{{tag_item}}</view>
 </view>
-<image class="avatar" src="{{mentorObj.avatar}}"></image>
+<image class="avatar" src="{{mentorObj.avatar}}"></image> -->
