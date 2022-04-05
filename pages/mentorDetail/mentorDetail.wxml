@@ -81,6 +81,12 @@
 
       <view class="resume_wrapper">
         <text class="title">上传简历</text>
+        <view class="resume_upload">
+          <view class="upload_btn">
+            <image src="../../icon/plus.png"></image>
+          </view>
+          <text>请上传pdf/png/jpg格式文件</text>
+        </view>
       </view>
 
       <view class="alert_text">

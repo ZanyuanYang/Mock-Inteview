@@ -158,6 +158,30 @@ page {
   font-size: 16px;
   color: #000;
 }
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload {
+  display: flex;
+  margin-top: 16px;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload .upload_btn {
+  width: 90px;
+  height: 90px;
+  background: #EBF0FB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload .upload_btn image {
+  width: 30px;
+  height: 30px;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload text {
+  align-self: flex-end;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  padding-left: 10px;
+}
 .appointment_wrapper .mentor_wrapper_1 .mentor_item .alert_text {
   margin-top: 14px;
 }
