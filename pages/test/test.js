@@ -37,7 +37,12 @@ Page({
     self = this
     wx.cloud.uploadFile({
       cloudPath:'temp/'+sourceName, //这里的'temp/'是在环境中创建的文件夹
-      filePath: sourcePath
+      filePath: sourcePath,
+      success: res => {
+        // 返回文件 ID
+        console.log(res.fileID)
+      },
+      fail: console.error
     })
   },
 
