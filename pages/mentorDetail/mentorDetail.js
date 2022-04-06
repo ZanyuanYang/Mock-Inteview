@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mentorObj: {}
+    mentor_id: "",
+    array: [],
+    index: 0,
+    mentorObj: {},
+    sourcePath:'',
+    dstFilePath:'',
+    sourceName:'请上传pdf/png/jpg格式文件',
+    url: ''
   },
 
   /**
@@ -30,7 +37,64 @@ Page({
     let currentPage = pages[pages.length - 1];
     let options = currentPage.options;
     const { mentor_id } = options;
+    this.setData({
+      mentor_id: mentor_id
+    })
     this.getMentorDetail(mentor_id);
+  },
+  // 上传简历
+  chooseFile(e){
+    var self = this
+    wx.chooseMessageFile({
+      count: 1,
+      type:'file',
+      success(res){
+        const x = res.tempFiles[0].path
+        const y = res.tempFiles[0].name
+        console.log('选择',res)
+        self.setData({
+          sourcePath:x,
+          sourceName:y
+        })
+      }
+    })
+  },
+
+  // 上传简历
+  uploadFile(){
+    var sourcePath = this.data.sourcePath
+    var sourceName = this.data.sourceName
+ 
+    self = this
+    wx.cloud.uploadFile({
+      cloudPath:'temp/'+sourceName, //这里的'temp/'是在环境中创建的文件夹
+      filePath: sourcePath
+    })
+  },
+
+  appointment_form(res){
+    var {name, wechat, phone, preferred_time, summary} = res.detail.value;
+    var service_type = this.data.array[this.data.index];
+    console.log(name, wechat, phone, preferred_time, summary, service_type, this.data.mentor_id)
+    // this.uploadFile()
+    // db.collection('mentorList').add({
+    //   // data 字段表示需新增的 JSON 数据
+    //   data: {
+    //     name: name,
+    //     position: position,
+    //     experience: experience,
+    //   },
+    //   success: function(res) {
+    //     console.log(res)
+    //   }
+    // })
+  },
+
+  // 预约指导类型
+  bindPickerChange: function(e) {
+    this.setData({
+      index: e.detail.value
+    })
   },
 
   getMentorDetail(mentor_id){
@@ -39,7 +103,8 @@ Page({
     }).get().then(res => {
       console.log(res.data[0]);
       this.setData({
-        mentorObj: res.data[0]
+        mentorObj: res.data[0],
+        array: res.data[0].service
       })
     })
   }

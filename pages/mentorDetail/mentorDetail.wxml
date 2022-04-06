@@ -44,7 +44,7 @@
 
       <view class="appointment_form_wrapper">
         <text>预约报名</text>
-        <form>
+        <form bindsubmit="appointment_form">
           <view class="form_wrapper">
             <view class="title">姓名</view>
             <view class="input">
@@ -53,49 +53,62 @@
 
             <view class="title">微信号</view>
             <view class="input">
-              <input class="input_text" name="name" placeholder="填写你的微信号" />
+              <input class="input_text" name="wechat" placeholder="填写你的微信号" />
             </view>
 
             <view class="title">电话:(选填)</view>
             <view class="input">
-              <input class="input_text" name="name" placeholder="填写你的电话" />
+              <input class="input_text" name="phone" placeholder="填写你的电话" />
             </view>
 
             <view class="title">预约指导类型</view>
             <view class="input">
-              <input class="input_text" name="name" placeholder="选择你的指导类型" />
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker_wrapper">
+                  <view class="picker">
+                    {{array[index]}}
+                  </view>
+                  <image src="../../icon/down.png"></image>
+                </view>
+              </picker>  
             </view>
+
 
             <view class="title">预约意向时间</view>
             <view class="input">
-              <input class="input_text" name="name" placeholder="请填写所有意向时间" />
+              <input class="input_text" name="preferred_time" placeholder="请填写所有意向时间" />
             </view>
 
             <view class="title">自我介绍/备注</view>
             <view class="input_summary">
-              <textarea class="input_text" name="name" placeholder="300字内" />
+              <textarea class="input_text" name="summary" placeholder="300字内" />
             </view>
+
+            <view class="resume_wrapper">
+              <view class="title">上传简历</view>
+              <view class="resume_upload">
+                <view class="upload_btn" bindtap="chooseFile">
+                  <image src="../../icon/plus.png"></image>
+                </view>
+                <text class="upload_remind">{{sourceName}}</text>
+              </view>
+            </view>
+
+            <view class="alert_text">
+              <text>预约提交后小戴工作室会尽快联系导师进行匹配。匹配结果会通过电话/微信的形式联络候选人和导师。该预约目前免费。最终解释权归没觉睡工作室所有。</text>
+            </view>
+
+            <view class="submit_wrapper">
+              <button form-type="submit" class="submit_btn">提交</button>
+            </view>
+
           </view>
         </form>
       </view>
 
-      <view class="resume_wrapper">
-        <text class="title">上传简历</text>
-        <view class="resume_upload">
-          <view class="upload_btn">
-            <image src="../../icon/plus.png"></image>
-          </view>
-          <text>请上传pdf/png/jpg格式文件</text>
-        </view>
-      </view>
+      
 
-      <view class="alert_text">
-        <text>预约提交后小戴工作室会尽快联系导师进行匹配。匹配结果会通过电话/微信的形式联络候选人和导师。该预约目前免费。最终解释权归没觉睡工作室所有。</text>
-      </view>
-
-      <view class="submit_wrapper">
-        <button form-type="submit" class="submit_btn">提交</button>
-      </view>
+      
     </view>
   </view>
 </view>

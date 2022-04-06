@@ -24,7 +24,7 @@ page {
   top: 12%;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 .appointment_wrapper .mentor_wrapper_1 .mentor_item {
   margin-top: 10px;
@@ -135,6 +135,22 @@ page {
   width: 100%;
   font-size: 13px;
 }
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .input picker {
+  width: 100%;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .input picker .picker_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 12px;
+  padding-right: 10px;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .input picker .picker_wrapper .picker {
+  font-size: 13px;
+}
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .input picker .picker_wrapper image {
+  height: 20px;
+  width: 20px;
+}
 .appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .input_summary {
   width: 100%;
   height: 140px;
@@ -151,18 +167,18 @@ page {
   height: 100%;
   font-size: 13px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper {
   margin-top: 16px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .title {
-  font-size: 16px;
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper .title {
+  font-size: 15px;
   color: #000;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper .resume_upload {
   display: flex;
   margin-top: 16px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload .upload_btn {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper .resume_upload .upload_btn {
   width: 90px;
   height: 90px;
   background: #EBF0FB;
@@ -171,28 +187,29 @@ page {
   align-items: center;
   justify-content: center;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload .upload_btn image {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper .resume_upload .upload_btn image {
   width: 30px;
   height: 30px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .resume_wrapper .resume_upload text {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .resume_wrapper .resume_upload .upload_remind {
   align-self: flex-end;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   padding-left: 10px;
+  color: black;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .alert_text {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .alert_text {
   margin-top: 14px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .alert_text text {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .alert_text text {
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   color: #7C7C80;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .submit_wrapper {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .submit_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -204,7 +221,8 @@ page {
   border-radius: 4px;
   margin-top: 30px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .submit_wrapper .submit_btn {
+.appointment_wrapper .mentor_wrapper_1 .mentor_item .appointment_form_wrapper .form_wrapper .submit_wrapper .submit_btn {
+  width: 100%;
   background-color: #497CFE;
   color: white;
   font-style: normal;
