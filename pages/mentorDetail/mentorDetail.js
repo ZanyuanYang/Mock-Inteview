@@ -1,6 +1,5 @@
 const db = wx.cloud.database();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -42,7 +41,8 @@ Page({
     })
     this.getMentorDetail(mentor_id);
   },
-  // 上传简历
+
+  // 选择上传的简历
   chooseFile(e){
     var self = this
     wx.chooseMessageFile({
@@ -60,34 +60,41 @@ Page({
     })
   },
 
-  // 上传简历
-  uploadFile(){
+  //提交预约表单和上传简历
+  appointment_form(res){
+    var {name, wechat, phone, preferred_time, summary} = res.detail.value;
+    var service_type = this.data.array[this.data.index];
+    console.log(name, wechat, phone, preferred_time, summary, service_type, this.data.mentor_id)
+
     var sourcePath = this.data.sourcePath
     var sourceName = this.data.sourceName
  
     self = this
     wx.cloud.uploadFile({
       cloudPath:'temp/'+sourceName, //这里的'temp/'是在环境中创建的文件夹
-      filePath: sourcePath
+      filePath: sourcePath,
+      success: res => {
+        // 返回文件 ID
+        console.log(res.fileID)
+        db.collection('appointment').add({
+          // data 字段表示需新增的 JSON 数据
+          data: {
+            name: name,
+            mentor_id: this.data.mentor_id,
+            wechat: wechat,
+            phone: phone,
+            service_type: service_type,
+            preferred_time: preferred_time,
+            summary: summary,
+            file_id: res.fileID
+          },
+          success: function(res) {
+            console.log(res)
+          }
+        })
+      },
+      fail: console.error
     })
-  },
-
-  appointment_form(res){
-    var {name, wechat, phone, preferred_time, summary} = res.detail.value;
-    var service_type = this.data.array[this.data.index];
-    console.log(name, wechat, phone, preferred_time, summary, service_type, this.data.mentor_id)
-    // this.uploadFile()
-    // db.collection('mentorList').add({
-    //   // data 字段表示需新增的 JSON 数据
-    //   data: {
-    //     name: name,
-    //     position: position,
-    //     experience: experience,
-    //   },
-    //   success: function(res) {
-    //     console.log(res)
-    //   }
-    // })
   },
 
   // 预约指导类型
@@ -97,6 +104,7 @@ Page({
     })
   },
 
+  // 获取导师信息
   getMentorDetail(mentor_id){
     db.collection('mentorList').where({
       _id: mentor_id
