@@ -21,3 +21,9 @@
     </view>
   </form>
 </view>
+
+
+<button size='mini' bindtap="chooseFile">选择文件 </button>
+<text>{{sourceName}}</text>
+<button size='mini' bindtap="uploadFile">上传文件</button>
+<button size='mini' bindtap="downloadFile">下载文件</button>
