@@ -1,3 +1,5 @@
+import { showToast } from "../../utils/asyncWx.js";
+
 const db = wx.cloud.database();
 Page({
   /**
@@ -62,39 +64,50 @@ Page({
 
   //提交预约表单和上传简历
   appointment_form(res){
+    wx.showLoading({title: '提交中', icon: 'loading', mask: true, duration:2000})
     var {name, wechat, phone, preferred_time, summary} = res.detail.value;
     var service_type = this.data.array[this.data.index];
     console.log(name, wechat, phone, preferred_time, summary, service_type, this.data.mentor_id)
 
     var sourcePath = this.data.sourcePath
     var sourceName = this.data.sourceName
+
+    if(name == null || name.length == 0){
+      showToast({title:"请填写姓名"})
+    }else if (wechat == null || wechat.length == 0){
+      showToast({title:"请填写微信号"})
+    }else if (preferred_time == null || preferred_time.length == 0){
+      showToast({title:"请填写预约意向时间"})
+    }else if (sourcePath === ''){
+      showToast({title:"请上传简历"})
+    }
  
     self = this
-    wx.cloud.uploadFile({
-      cloudPath:'temp/'+sourceName, //这里的'temp/'是在环境中创建的文件夹
-      filePath: sourcePath,
-      success: res => {
-        // 返回文件 ID
-        console.log(res.fileID)
-        db.collection('appointment').add({
-          // data 字段表示需新增的 JSON 数据
-          data: {
-            name: name,
-            mentor_id: this.data.mentor_id,
-            wechat: wechat,
-            phone: phone,
-            service_type: service_type,
-            preferred_time: preferred_time,
-            summary: summary,
-            file_id: res.fileID
-          },
-          success: function(res) {
-            console.log(res)
-          }
-        })
-      },
-      fail: console.error
-    })
+    // wx.cloud.uploadFile({
+    //   cloudPath:'temp/'+sourceName, //这里的'temp/'是在环境中创建的文件夹
+    //   filePath: sourcePath,
+    //   success: res => {
+    //     // 返回文件 ID
+    //     console.log(res.fileID)
+    //     db.collection('appointment').add({
+    //       // data 字段表示需新增的 JSON 数据
+    //       data: {
+    //         name: name,
+    //         mentor_id: this.data.mentor_id,
+    //         wechat: wechat,
+    //         phone: phone,
+    //         service_type: service_type,
+    //         preferred_time: preferred_time,
+    //         summary: summary,
+    //         file_id: res.fileID
+    //       },
+    //       success: function(res) {
+    //         console.log(res)
+    //       }
+    //     })
+    //   },
+    //   fail: console.error
+    // })
   },
 
   // 预约指导类型

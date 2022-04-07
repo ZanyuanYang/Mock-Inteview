@@ -54,19 +54,6 @@ page {
 .appointment_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row1 .mentor_info .mentor_title {
   font-size: 18px;
 }
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row1 .mentor_appointment_btn {
-  position: absolute;
-  display: flex;
-  right: 9%;
-}
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row1 .mentor_appointment_btn .mentor_appointment {
-  font-size: 15px;
-  color: #277EFF;
-}
-.appointment_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row1 .mentor_appointment_btn .right_arrow {
-  width: 22px;
-  height: 22px;
-}
 .appointment_wrapper .mentor_wrapper_1 .mentor_item .mentor_item_row2 {
   display: flex;
   font-size: 12px;
