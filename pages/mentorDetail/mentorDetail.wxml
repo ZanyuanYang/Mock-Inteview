@@ -11,10 +11,6 @@
           <view class="mentor_name">{{mentorObj.name}}</view>
           <view class="mentor_title">{{mentorObj.position}}</view>
         </view>
-        <view class="mentor_appointment_btn">
-          <view class="mentor_appointment">去预约</view>
-          <image class="right_arrow" src="../../icon/right_arrow.png" alt="avatar" />
-        </view>
       </view>
 
       <view class="mentor_item_row2">
@@ -58,7 +54,7 @@
 
             <view class="title">电话:(选填)</view>
             <view class="input">
-              <input class="input_text" name="phone" placeholder="填写你的电话" />
+              <input class="input_text" name="phone" placeholder="填写你的电话" type="number" />
             </view>
 
             <view class="title">预约指导类型</view>
@@ -104,11 +100,7 @@
 
           </view>
         </form>
-      </view>
-
-      
-
-      
+      </view> 
     </view>
   </view>
 </view>
